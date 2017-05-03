@@ -1,11 +1,11 @@
+var serverUrl = 'https://mobile-application.mofanghr.com';
+var Promise = require('../lib/es6-promise');
 module.exports = {
-    $get: function(){
+    $get: function(url,params){
             wx.request({
-                url: 'https://mobile-application.mofanghr.com/member/tag/list.json',
+                url: serverUrl + url,
                 method: 'GET',
-                data: {
-                    params:JSON.stringify({"group":"o2oWelfare"})
-                },
+                data: params,
                 header: {
                     'content-type': 'application/json'
                 },
@@ -17,9 +17,9 @@ module.exports = {
                 }
          })
     },
-    $post: function(){
+    $post: function(url,params){
             wx.request({
-                url: 'test.php',
+                url: serverUrl + url,
                 method: 'POST',
                 data: {
                     x: '' ,
@@ -33,4 +33,4 @@ module.exports = {
                 }
          })
     }
-}
+};
