@@ -64,24 +64,19 @@ function promisify() {
   }
 
   wx.pro.request = options => {
-    if (options.toast) {
-      wx.showToast({
-        title: options.toast.title || '加载中',
-        icon: 'loading'
-      })
-    }
-
     return new Promise((resolve, reject) => {
       wx.request({
         url: options.url,
         method: options.method || 'GET',
         data: options.data,
+        header: {
+          'content-type': 'application/json'
+        },
         success: res => {
           if (res.statusCode >= 400) {
             console.error('wx.request fail [business]', options, res.statusCode, res.data)
             reject(res)
-          }
-          else {
+          } else {
             console.log('wx.request success', options, res.data)
             resolve(res.data) // unwrap data
           }
@@ -92,7 +87,6 @@ function promisify() {
         }
       })
     })
-
   }
 }
 
