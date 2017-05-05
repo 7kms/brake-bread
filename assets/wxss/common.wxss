@@ -24,3 +24,8 @@ page{
 .text-center{
     text-align: center;
 }
+.text-one-line{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

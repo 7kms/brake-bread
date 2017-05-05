@@ -6,44 +6,26 @@
         <view class="{{filterItem == 'category3' ? 'filter-item item-active' : 'filter-item'}}" data-item="category3" bindtap="selectFilter">分类3</view>
     </view>
     <scroll-view class="pro-container" scroll-y="true" style="height: 200rpx;">
-        <view class="pro-cover"></view>
-        <view class="pro-list">
-            <view class="pro-item">
-                <view class="item-pic" style="background-image:url(https://img.alicdn.com/imgextra/i3/2091172013/TB2KX0omC8mpuFjSZFMXXaxpVXa_!!2091172013.jpg_430x430q90.jpg)"></view>
-                <view class="item-desc">
-                    <view class="item-name">
-                        <text>小烘焙</text>
-                    </view>
-                    <view class="item-info">
-                        <text class="item-price">￥315.00</text>
-                        <text class="item-sales weak">销量: 2</text>
-                    </view>
-                </view>
-            </view>
-            <view class="pro-item">
-                <view class="item-pic" style="background-image:url(https://img.alicdn.com/imgextra/i3/2091172013/TB2KX0omC8mpuFjSZFMXXaxpVXa_!!2091172013.jpg_430x430q90.jpg)"></view>
-                <view class="item-desc">
-                    <view class="item-name">
-                        <text>小烘焙</text>
-                    </view>
-                    <view class="item-info">
-                        <text class="item-price">￥315.00</text>
-                        <text class="item-sales weak">销量: 2</text>
+        <view class="pro-cover" wx:if="{{filterItem != 'all' && coverImage}}">
+            <image class="image-cover"
+                   mode="aspectFill"
+                   src="{{coverImage}}"></image>
+        </view>
+        <view class="pro-list" wx:if="{{list.length}}">
+            <block wx:for="{{list}}" wx:key="{{index}}">
+                <view class="pro-item">
+                    <view class="item-pic" style="background-image:url({{item.picUrl}})"></view>
+                    <view class="item-desc">
+                        <view class="item-name text-one-line">
+                            <text>{{item.name}}</text>
+                        </view>
+                        <view class="item-info">
+                            <text class="item-price">￥{{item.price}}</text>
+                            <text class="item-sales weak">销量: {{item.sales}}</text>
+                        </view>
                     </view>
                 </view>
-            </view>
-            <view class="pro-item">
-                <view class="item-pic" style="background-image:url(https://img.alicdn.com/imgextra/i3/2091172013/TB2KX0omC8mpuFjSZFMXXaxpVXa_!!2091172013.jpg_430x430q90.jpg)"></view>
-                <view class="item-desc">
-                    <view class="item-name">
-                        <text>小烘焙</text>
-                    </view>
-                    <view class="item-info">
-                        <text class="item-price">￥315.00</text>
-                        <text class="item-sales weak">销量: 2</text>
-                    </view>
-                </view>
-            </view>
+            </block>
         </view>
     </scroll-view>
 </view>
