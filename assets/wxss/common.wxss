@@ -1,5 +1,11 @@
 page{
     font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    height: 100%;
+    font-size: 28rpx;
+    color: #777;
+}
+button{
+    font-size: 28rpx;
 }
 .color-weak{
     color: #eee;
@@ -28,4 +34,85 @@ page{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+
+
+/* loading */
+.loading-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-size: 24rpx;
+}
+.loadEffect{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-right: 5rpx;
+    transform: scale(.5);
+}
+.loadEffect view{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    position: absolute;
+    -webkit-animation: load 1.04s ease infinite;
+}
+@-webkit-keyframes load{
+    0%{
+        -webkit-transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        -webkit-transform: scale(.3);
+        opacity: 0.5;
+    }
+}
+.loadEffect view:nth-child(1){
+    left: 0;
+    top: 50%;
+    margin-top:-5px;
+    -webkit-animation-delay:0.13s;
+}
+.loadEffect view:nth-child(2){
+    left: 7px;
+    top: 7px;
+    -webkit-animation-delay:0.26s;
+}
+.loadEffect view:nth-child(3){
+    left: 50%;
+    top: 0;
+    margin-left: -5px;
+    -webkit-animation-delay:0.39s;
+}
+.loadEffect view:nth-child(4){
+    top: 7px;
+    right:7px;
+    -webkit-animation-delay:0.52s;
+}
+.loadEffect view:nth-child(5){
+    right: 0;
+    top: 50%;
+    margin-top:-5px;
+    -webkit-animation-delay:0.65s;
+}
+.loadEffect view:nth-child(6){
+    right: 7px;
+    bottom:7px;
+    -webkit-animation-delay:0.78s;
+}
+.loadEffect view:nth-child(7){
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    -webkit-animation-delay:0.91s;
+}
+.loadEffect view:nth-child(8){
+    bottom: 7px;
+    left: 7px;
+    -webkit-animation-delay:1.04s;
 }

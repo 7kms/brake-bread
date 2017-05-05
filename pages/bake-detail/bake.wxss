@@ -1,0 +1,130 @@
+.bake-content{
+    padding-bottom: 50rpx;
+}
+.bake-cover{
+    width: 100%;
+    height: 600rpx;
+}
+.bake-cover image{
+    width: 100%;
+    height: 100%;
+}
+.bake-item{
+    padding: 0 10rpx;
+}
+
+.desc{
+    color: #777;
+    font-size: 24rpx;
+}
+.desc .bake-name{
+    color: #666;
+}
+.desc .bake-price{
+    margin-top: 10rpx;
+    color: #ff6500;
+}
+.desc .bake-text{
+    display: flex;
+    align-items: flex-start;
+}
+.desc .text-dfn{
+    margin-right: 10rpx;
+}
+.desc .text-desc{
+    flex: 1;
+}
+
+.comment{
+    margin: 15rpx 0;
+}
+
+.comment .label-list{
+    display: flex;
+    align-items: center;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.comment .label-list .label{
+    padding: 5rpx 10rpx;
+    margin-right: 5rpx;
+    background-color: #ffc6b0;
+    border-radius: 5rpx;
+    font-size:24rpx;
+    color:#888;
+}
+.pic-list image{
+    width: 100%;
+}
+
+/* operate */
+.bake-operate{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+.bake-operate button{
+    width: 45%;
+    height: 70rpx;
+    font-size: 28rpx;
+}
+.bake-operate .operate-buy{
+    color: #fff;
+    background-color: #ff6500;
+}
+.bake-operate .operate-car{
+    color: #666;
+    background-color: #fff;
+}
+
+.bake-select-wrap{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,.3);
+}
+.bake-select-wrap .bake-select{
+    width: 100%;
+    padding: 10rpx 0;
+    background-color: #fff;
+}
+.select-item{
+    display: flex;
+    align-items: center;
+    padding: 10rpx 5rpx;
+    border-top: 1px solid #eee;
+}
+.select-item.item-info{
+    align-items: flex-start;
+    border: none;
+}
+.select-item .select-avatar{
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 30rpx;
+}
+.select-item .select-name{
+    color: #666;
+    margin-bottom: 15rpx;
+}
+.select-item .select-price{
+    color: #ff6500;
+}
+.info-dfn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

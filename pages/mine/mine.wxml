@@ -1,3 +1,2 @@
-<view>
-    mine
-</view>
+<import src="../public/template.wxml"></import>
+<template is="loading"></template>

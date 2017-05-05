@@ -4,9 +4,11 @@
 }
 .index-swiper{
   width: 100%;
+  height: 300rpx;
 }
 .slide-image{
   width: 100%;
+  height: 300rpx;
 }
 .index-main{
   flex: 1;

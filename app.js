@@ -1,7 +1,9 @@
+let promise = require('./utils/wx-promise').promise
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     //调用API从本地缓存中获取数据
+    console.log(options)
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -25,6 +27,7 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    promise
   }
 });

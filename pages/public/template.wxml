@@ -1,0 +1,15 @@
+<template name="loading">
+    <view class="loading-content">
+        <view class="loadEffect">
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+        <view>加载中...</view>
+    </view>
+</template>

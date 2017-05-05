@@ -1,3 +1,4 @@
+<import src="../public/template.wxml"></import>
 <view class="container">
     <view class="pro-filter text-center">
         <view class="{{filterItem == 'all' ? 'filter-item item-active' : 'filter-item'}}" data-item="all" bindtap="selectFilter">全部</view>
@@ -5,15 +6,13 @@
         <view class="{{filterItem == 'category2' ? 'filter-item item-active' : 'filter-item'}}" data-item="category2" bindtap="selectFilter">分类2</view>
         <view class="{{filterItem == 'category3' ? 'filter-item item-active' : 'filter-item'}}" data-item="category3" bindtap="selectFilter">分类3</view>
     </view>
-    <scroll-view class="pro-container" scroll-y="true" style="height: 200rpx;">
+    <scroll-view class="pro-container" scroll-y="true" lower-threshold="150" bindscrolltolower="loadMore">
         <view class="pro-cover" wx:if="{{filterItem != 'all' && coverImage}}">
-            <image class="image-cover"
-                   mode="aspectFill"
-                   src="{{coverImage}}"></image>
+            <image class="image-cover" mode="aspectFill" src="{{coverImage}}"></image>
         </view>
         <view class="pro-list" wx:if="{{list.length}}">
             <block wx:for="{{list}}" wx:key="{{index}}">
-                <view class="pro-item">
+                <view class="pro-item" data-item-id="{{index+'brake'}}" catchtap="goDetail">
                     <view class="item-pic" style="background-image:url({{item.picUrl}})"></view>
                     <view class="item-desc">
                         <view class="item-name text-one-line">
@@ -27,5 +26,6 @@
                 </view>
             </block>
         </view>
+        <template is="loading" wx:if="{{loading}}"/>
     </scroll-view>
 </view>
