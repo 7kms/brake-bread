@@ -2,6 +2,7 @@ var coverUrl = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&
 Page({
     data:{
         loading: true,
+        scrollViewHeight: 100,
         filterItem: 'all',
         coverImage: '',
         list:[]
@@ -62,5 +63,10 @@ Page({
     },
     onLoad: function(){
         this.getList('all');
+        let sysInfo = wx.getSystemInfoSync();
+        console.log( sysInfo)
+        this.setData({
+            scrollViewHeight: sysInfo.windowHeight - 40
+        })
     }
 });
